@@ -2,15 +2,23 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-%matplotlib inline
+import argparse
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
 
-#import pokemonData
-pokemon_data = pd.read_csv("./data/Pokemon_clean.csv")
-pokemon_data = pd.get_dummies(pokemon_data, columns=["Type 1", "Type 2"])
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('file_path', help='Data file path')
+    parser.add_argument('output_file_path', help='Output file path')
+    args = parser.parse_args()
+
+    return args.file_path, args.output_file_path
 
 def main():
-    #pokemon_data = pokemonData.get_pokemon_data(True)
+    pokemon_data_file_path, pokemon_data_output_file_path = get_args()
+
+    pokemon_data = pd.read_csv(pokemon_data_file_path)
+    pokemon_data = pd.get_dummies(pokemon_data, columns=["Type 1", "Type 2"])
+
     features = pokemon_data.loc[:, "Total":"Type 2_Water"]
     features = features.drop(["Legendary", "Generation"], axis=1);
 
@@ -25,6 +33,9 @@ def main():
     plt.rcParams["figure.figsize"] = (15, 4)
     plt.rcParams["xtick.labelsize"] = 10
     importance_plot = sns.barplot(data=importance_table, x="Feature", y="Importance")
+
+    importance_plot_fig = importance_plot.get_figure()
+    importance_plot_fig.savefig(pokemon_data_output_file_path)
 
 
 if __name__ == "__main__":
