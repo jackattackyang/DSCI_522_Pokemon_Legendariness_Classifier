@@ -4,6 +4,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import argparse
 
+from sklearn.neighbors import KNeighborsClassifier
+
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
@@ -41,15 +43,18 @@ def main():
     scores_train = []
     scores_test = []
 
-    for depth in range(1, 25):
+    for depth in range(1, 10):
         tree = DecisionTreeClassifier(max_depth = depth, random_state=rstate)
+        #tree = KNeighborsClassifier(n_neighbors = depth)
         tree.fit(X_train, y_train)
 
         depths.append(depth)
-        scores_train.append(np.mean(cross_val_score(tree, X_train, y_train, cv=10)))
+        #scores_train.append(np.mean(cross_val_score(tree, X_train, y_train, cv=10)))
         scores_test.append(np.mean(cross_val_score(tree, X_test, y_test, cv=10)))
 
     depth_score_test_df = pd.DataFrame(scores_test, index=depths, columns=['score'])
+
+    print(depth_score_test_df)
 
     # Read depth of highest score
     depth_of_max_test = depth_score_test_df.loc[depth_score_test_df['score'].idxmax()].name
