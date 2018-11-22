@@ -25,6 +25,7 @@ def add_features_pokemon_data(data):
 
 def write_clean_pokemon_data(pokemon_data_file_path, pokemon_data_output_file_path, with_extra_features):
     pokemon_data = get_data(pokemon_data_file_path)
+    pokemon_data = pokemon_data.drop(["Generation", "Total"], axis=1);
 
     if with_extra_features:
         pokemon_data = add_features_pokemon_data(pokemon_data)

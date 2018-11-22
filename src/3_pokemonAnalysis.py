@@ -28,8 +28,8 @@ def main():
     pokemon_data = pd.get_dummies(pokemon_data, columns=["Type 1", "Type 2"])
 
     # Separate features and target
-    features = pokemon_data.loc[:, "Total":"Type 2_Water"]
-    features = features.drop(["Legendary", "Generation", "Total"], axis=1);
+    features = pokemon_data.loc[:, "HP":"Type 2_Water"]
+    features = features.drop(["Legendary"], axis=1);
 
     target = pokemon_data.loc[:, ["Legendary"]]
 
