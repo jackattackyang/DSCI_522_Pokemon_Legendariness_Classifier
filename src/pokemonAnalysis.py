@@ -30,6 +30,8 @@ def main():
     importance_df = importance_df.query("Importance > 0.01")
     importance_df = importance_df.sort_values(by="Importance", ascending=False)
 
+    importance_df.to_csv(pokemon_data_output_file_path + ".csv")
+
     # Save importance bar graph
     plt.rcParams["figure.figsize"] = (15, 4)
     plt.rcParams["xtick.labelsize"] = 10
