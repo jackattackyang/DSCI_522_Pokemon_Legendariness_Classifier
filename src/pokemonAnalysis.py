@@ -26,16 +26,16 @@ def main():
     tree = DecisionTreeClassifier()
     tree.fit(features, legendary)
     feature_importances = tree.feature_importances_
-    importance_table = pd.DataFrame({"Feature": features.columns.values, "Importance": feature_importances})
-    importance_table = importance_table.query("Importance > 0.01")
-    importance_table = importance_table.sort_values(by="Importance", ascending=False)
+    importance_df = pd.DataFrame({"Feature": features.columns.values, "Importance": feature_importances})
+    importance_df = importance_df.query("Importance > 0.01")
+    importance_df = importance_df.sort_values(by="Importance", ascending=False)
 
+    # Save importance bar graph
     plt.rcParams["figure.figsize"] = (15, 4)
     plt.rcParams["xtick.labelsize"] = 10
-    importance_plot = sns.barplot(data=importance_table, x="Feature", y="Importance")
-
+    importance_plot = sns.barplot(data=importance_df, x="Feature", y="Importance")
     importance_plot_fig = importance_plot.get_figure()
-    importance_plot_fig.savefig(pokemon_data_output_file_path)
+    importance_plot_fig.savefig(pokemon_data_output_file_path + "_plot.png")
 
 
 if __name__ == "__main__":
