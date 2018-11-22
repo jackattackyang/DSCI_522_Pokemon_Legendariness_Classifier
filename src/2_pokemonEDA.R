@@ -17,7 +17,7 @@ main <- function(){
   
 # converts data to tidy form
 pokemon_data_tidy <- pokemon_data %>% 
-  gather(key="Feature", value="Points", Total:Speed)
+  gather(key="Feature", value="Points", HP:Speed)
 
 # bar graph displaying pokemon vs legendary pokemon numbers
 pokemon_count <- pokemon_data_tidy %>% 
