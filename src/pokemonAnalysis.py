@@ -7,15 +7,13 @@ from sklearn.tree import DecisionTreeClassifier, export_graphviz
 
 #import pokemonData
 pokemon_data = pd.read_csv("./data/Pokemon_clean.csv")
-pokemon_data.head()
 pokemon_data = pd.get_dummies(pokemon_data, columns=["Type 1", "Type 2"])
-pokemon_data.head()
 
 def main():
     #pokemon_data = pokemonData.get_pokemon_data(True)
     features = pokemon_data.loc[:, "Total":"Type 2_Water"]
     features = features.drop(["Legendary", "Generation"], axis=1);
-    features.head()
+
     legendary = pokemon_data.Legendary
     tree = DecisionTreeClassifier()
     tree.fit(features, legendary)
