@@ -7,9 +7,9 @@ Rayce Rossum, Jack Yang
 ### Proposal Question
 
 We are interested in what are the top strongest indicators that
-determines whether a Pokemon is legendary.  
-This question is **Predictive** as we are using existing Pokemon data to
-assess the attributes that are most indicative of a legendary Pokemon
+determines whether a Pokemon is legendary. This question is
+**Predictive** as we are using existing Pokemon data to assess the
+attributes that are most indicative of a legendary Pokemon
 
 ### Procedure
 
@@ -38,31 +38,27 @@ legendary.
 
 Figure 1: Pokemon Count
 
-As we can see, less than 10 percent of Pokemon are legendary. This is
-actually a little more than expected.
-
-We are most curious in determining whether there is a relationship
-between Pokemon attributes and the legendary
+Our EDA revealed that less than 10 percent of Pokemon are legendary.
+This was a little more than expected. We then wanted to determine
+whether there is a relationship between Pokemon attributes and legendary
 status.
 
 <img src="/home/rayce/Assignments/Block 3/DSCI 522/DSCI_522_Pokemon_Legendariness_Classifier/results/EDA_pokemonFeatureComparison.png" width="80%" />
 
 Figure 2: Pokemon Feature Comparison
 
-We can see that indeed, legendary Pokemon tend to have higher stats
-compared to regular Pokemon.
-
-Lastly, we also want to see whether there is favoritism for legendary
-Pokemon across different
+We saw that indeed, legendary Pokemon tend to have higher stats compared
+to regular Pokemon. Lastly, we wanted to see whether there is any
+favoritism for legendary Pokemon across different
 types.
 
 <img src="/home/rayce/Assignments/Block 3/DSCI 522/DSCI_522_Pokemon_Legendariness_Classifier/results/EDA_pokemonTypeComparison.png" width="80%" />
 
 Figure 3: Pokemon Type Comparison
 
-It turns out “Flying”, “Dragon” and “Psychic” types seem to take up a
-disproportionate number of all legendaries, given their representation.
-We would expect these types to play a role as legendary predictors.
+“Flying”, “Dragon” and “Psychic” types take up a disproportionate number
+of all legendaries, given their representation. We would expect these
+types to play a role as legendary predictors.
 
 #### Analysis
 
@@ -71,7 +67,7 @@ data into a features set that included stats and type of Pokemon, and a
 target set that included the Pokemon’s legendary status. Type attributes
 (categorical variables) for the Pokemon were split into columns
 containing dummy variables due to the shortcomings of the `sklearn`
-implmentation of decision trees. The `DecisionTreeClassifier` was then
+implementation of decision trees. The `DecisionTreeClassifier` was then
 used to generate our model. We optimized our hyper parameter (depth) by
 conducting cross validation. After selecting the most optimal depth, we
 refitted the entire dataset. The object attribute `feature_importances_`
@@ -80,9 +76,12 @@ features with the highest values answer our question.
 
 #### Results
 
-From our analysis, we found “Sp. Atk”, “Attack”, “Speed” and “HP” to
-have the greatest impact on determining the legendary status of Pokemon.
-Types, as it turned out, had no influence, which was very surprising.
+From our analysis, we found “Sp. Atk”, “Attack”, “Sp. Def” to have the
+greatest impact on determining the legendary status of Pokemon. Looking
+back at our EDA we can see that “Sp. Atk” had a large difference between
+non-legendary and legendary Pokemon so it makes sense that this was
+chosen as an important feature. Types had no influence, which was
+surprising based on our EDA.
 
 | Feature | Importance |
 | :------ | ---------: |
@@ -93,22 +92,19 @@ Types, as it turned out, had no influence, which was very surprising.
 #### Limitations and Time Considerations
 
 With our current knowledge level, between decision trees and KNN (k
-neartest neighbors), we were more comfortable with classifying
+nearest neighbors), we were more comfortable with classifying
 categorical and numerical variables using decision trees. However, we
 cannot say whether decision trees is better than KNN. These two may also
 not be the best method for our question. Our views may change in a few
-weeks from now with more techniques learned in 571.
+weeks from now with more techniques learned in 571. An interesting
+insight that we did not make use of in our analysis is the fact that
+many legendary Pokemon are classified as “Genderless”, therefore if we
+were to add another feature to our dataset, it may give us another good
+indicator. Another limitation with this analysis is the
+“pseudo-legendary”, a Pokemon with high stats that is not considered
+legendary. So in this case, our classifier would wrongly classify a
+normal Pokemon as a legendary.
 
-An interesting insight that we did not make use of in our analysis is
-the fact that many legendary Pokemon are classified as “Genderless”,
-therefore if we were to add another feature to our dataset, it may give
-us another good indicator.
-
-Another limitation with this analysis is the “pseudo-legendary”, a
-Pokemon with high stats that is not considered legendary. So in this
-case, our classifier would wrongly classify a normal Pokemon as a
-legendary.
-
-With more time avilable, we would test likely mis-classifications, add a
-“Gender” feature and attempt to improve the score of our model by
-identifying better features.
+With more time available, we would test likely mis-classifications, add
+a “Gender” feature and attempt to improve our model by by identifying
+better features.
