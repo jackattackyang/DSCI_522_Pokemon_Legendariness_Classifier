@@ -31,7 +31,7 @@ We dropped "Generation" and "Total" from our set of features. "Total" was droppe
 
 The following barplot explores the dataset and gives us some intuition of what proportion of Pokemon is actually legendary.
 
-<img src="C:/Users/Jack/Documents/Data Science/DSCI522_workflows/DSCI_522_Pokemon_Legendariness_Classifier/results/EDA_pokemonCount.png" width="80%" />
+<img src="https://github.com/UBC-MDS/DSCI_522_Pokemon_Legendariness_Classifier/blob/master/results/EDA_pokemonCount.png" width="80%" />
 
 Figure 1: Pokemon Count
 
@@ -39,13 +39,13 @@ As we can see, less than 10 percent of Pokemon are legendary. This is actually a
 
 We are most curious in determining whether there is a relationship between Pokemon attributes and the legendary status.
 
-<img src="C:/Users/Jack/Documents/Data Science/DSCI522_workflows/DSCI_522_Pokemon_Legendariness_Classifier/results/EDA_pokemonFeatureComparison.png" width="80%" />
+<img src="https://github.com/UBC-MDS/DSCI_522_Pokemon_Legendariness_Classifier/blob/master/results/EDA_pokemonFeatureComparison.png" width="80%" />
 
 Figure 2: Pokemon Feature Comparison
 
 We can see that indeed, legendary Pokemon tend to have higher stats compared to regular Pokemon. Lastly, we wanted to see whether there is any favoritism for legendary Pokemon across different types.
 
-<img src="C:/Users/Jack/Documents/Data Science/DSCI522_workflows/DSCI_522_Pokemon_Legendariness_Classifier/results/EDA_pokemonTypeComparison.png" width="80%" />
+<img src="https://github.com/UBC-MDS/DSCI_522_Pokemon_Legendariness_Classifier/blob/master/results/EDA_pokemonTypeComparison.png" width="80%" />
 
 Figure 3: Pokemon Type Comparison
 
@@ -67,7 +67,7 @@ Table 1: Feature Importances
 | Attack  |        0.34|
 | Sp. Def |        0.13|
 
-<img src="C:/Users/Jack/Documents/Data Science/DSCI522_workflows/DSCI_522_Pokemon_Legendariness_Classifier/results/DecisionTree_important_features_plot.png" width="80%" />
+<img src="https://github.com/UBC-MDS/DSCI_522_Pokemon_Legendariness_Classifier/blob/master/results/DecisionTree_important_features_plot.png" width="80%" />
 
 Figure 4: Top Predictors for Legendaries
 
