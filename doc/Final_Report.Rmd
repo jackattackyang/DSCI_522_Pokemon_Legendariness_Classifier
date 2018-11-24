@@ -5,7 +5,8 @@ output: github_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(out.width = "80%", echo = FALSE)
+library(here)
 ```
 
 ## Intro
@@ -18,26 +19,31 @@ This question is **Predictive** as we are using existing Pokemon data to assess 
 ### Procedure
 
 #### Data Retrieval
-We used the following python script to retrieve the Pokemon dataset from [Kaggle](https://www.kaggle.com/abcsds/pokemon)
+We used the following python script to retrieve the [Pokemon Dataset](https://www.kaggle.com/abcsds/pokemon) from Kaggle
 
 #### Data Cleaning
 We dropped "Generation" and "Total" 
 
 #### Exploratory Data Analysis
 The following barplot explores the dataset and gives us some intuition of what proportion of Pokemon is actually legendary. 
-![barplot]()
+```{r eda bar1, fig.cap='Figure 1: Pokemon Count'}
+
+knitr::include_graphics(here::here("results", "EDA_pokemonCount.png"))
+
+```
+
 
 We are most curious in determining whether there is a relationship between Pokemon attributes and the legendary status.
-![boxplot]()
+
 
 Lastly, we also want to see whether there is favoritism for legendary Pokemon across different types.
-![barplottype]()
+
 
 #### Analysis
 We used the decision tree classifier in Python's sklearn. We fed in stats of Pokemon including: type, attack, health... etc. as features. After fitting the data, object attribute feature_importances_ returned an array of the gini score reduction of each feature. The top  features with the highest values answer our question.
 
 #### Results
-![barplotimportance]()
+
 
 From our analysis, we found "Sp. Atk", "Attack", "Speed" and "HP" to have the greatest impact on determining the legendary status of Pokemon. Types, as it turned out, have very little influence. 
 
