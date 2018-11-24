@@ -61,10 +61,10 @@ knitr::include_graphics(here::here("results", "EDA_pokemonTypeComparison.png"))
 
 Figure 3: Pokemon Type Comparison
 
-It turns out "Flying", "Dragon" and "Psychic" types seem to take up a disproportionate number of all legendaries, given their representation. We would expect these types to play a role as legendary predictors.
+"Flying", "Dragon" and "Psychic" types seem to take up a disproportionate number of all legendaries, given their representation. We would expect these types to play a role as legendary predictors.
 
 #### Analysis
-We used the decision tree classifier in Python's sklearn. We split our data into a features set that included stats and type of Pokemon, and a target set that included the Pokemon's legendary status. Type attributes (categorical variables) for the Pokemon were split into columns containing dummy variables due to the shortcomings of the `sklearn` implmentation of decision trees. The `DecisionTreeClassifier` was then used to generate our model. We optimized our hyper parameter (depth) by conducting cross validation. After selecting the most optimal depth, we refitted the entire dataset. The object attribute `feature_importances_` returned an array of the gini score reduction of each feature. The features with the highest values answer our question.
+We used the decision tree classifier in Python's sklearn. We split our data into a features set that included stats and type of Pokemon, and a target set that included the Pokemon's legendary status. Type attributes (categorical variables) for the Pokemon were split into columns containing dummy variables due to the shortcomings of the `sklearn` implementation of decision trees. The `DecisionTreeClassifier` was then used to generate our model. We optimized our hyper parameter (depth) by conducting cross validation. After selecting the most optimal depth, we refitted the entire dataset. The object attribute `feature_importances_` returned an array of the gini score reduction of each feature. The features with the highest values answer our question.
 
 #### Results
 
