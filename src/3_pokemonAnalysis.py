@@ -20,7 +20,7 @@ def get_args():
 
 def main():
     # Set random state
-    rstate = 14675
+    rstate = 1263
 
     # Get command line arguments
     pokemon_data_file_path, pokemon_data_output_file_path = get_args()
@@ -35,9 +35,6 @@ def main():
 
     target = pokemon_data.loc[:, ["Legendary"]]
 
-    # Split data into test and train
-    X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.25, random_state=rstate)
-
     # Calculate best hyper parameter (max_depth) for DecisionTreeClassifier
     depths = []
     scores_train = []
@@ -46,11 +43,11 @@ def main():
     for depth in range(1, 10):
         tree = DecisionTreeClassifier(max_depth = depth, random_state=rstate)
         #tree = KNeighborsClassifier(n_neighbors = depth)
-        tree.fit(X_train, y_train)
+        tree.fit(features, target)
 
         depths.append(depth)
         #scores_train.append(np.mean(cross_val_score(tree, X_train, y_train, cv=10)))
-        scores_test.append(np.mean(cross_val_score(tree, X_test, y_test, cv=10)))
+        scores_test.append(np.mean(cross_val_score(tree, features, target, cv=10)))
 
     depth_score_test_df = pd.DataFrame(scores_test, index=depths, columns=['score'])
 
@@ -64,7 +61,7 @@ def main():
 
     # Fit with best hyper parameters
     bestTree = DecisionTreeClassifier(max_depth = depth_of_max_test, random_state=42)
-    bestTree.fit(X_train, y_train)
+    bestTree.fit(features, target)
     print("Testing score:\n", depth_score_test_df.iloc[[depth_of_max_test]])
 
     # Calculate most important features
