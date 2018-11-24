@@ -2,14 +2,27 @@ Pokemon Legendariness Classifier
 ================
 Rayce Rossum, Jack Yang
 
-## Intro
+<img src="/home/rayce/Assignments/Block 3/DSCI 522/DSCI_522_Pokemon_Legendariness_Classifier/imgs/International_Pokémon_logo-wikimedia-cc.svg" width="80%" />
+
+## Introduction
+
+This report documents our usage of a Pokemon stat dataset and
+`sklearn`’s `DecisionTreeClassifier` to find the strongest indicators
+of a Pokemon’s legendary status.
+
+Pokemon is a popular franchise including games, TV shows and trading
+cards where trainers battle their Pokemon verses other trainers with the
+ultimate goal to “Catch ’em All”. Our dataset was created using
+statistics from the Pokemon handheld games published by Nintendo which
+classifies Pokemon based on stats (Attack, Defence, etc.) and Type (Bug,
+Flying, Fire, etc.).
 
 ### Proposal Question
 
-We are interested in what are the top strongest indicators that
-determines whether a Pokemon is legendary. This question is
-**Predictive** as we are using existing Pokemon data to assess the
-attributes that are most indicative of a legendary Pokemon
+We are interested in the strongest indicators that determine whether a
+Pokemon is legendary. This question is **Predictive** as we are using
+existing Pokemon data to assess the attributes that are most indicative
+of a legendary Pokemon.
 
 ### Procedure
 
@@ -56,9 +69,9 @@ types.
 
 Figure 3: Pokemon Type Comparison
 
-“Flying”, “Dragon” and “Psychic” types take up a disproportionate number
-of all legendaries, given their representation. We would expect these
-types to play a role as legendary predictors.
+“Flying”, “Dragon” and “Psychic” types make up a disproportionate number
+of all legendaries. We would expect these types to play a role as
+legendary predictors.
 
 #### Analysis
 
@@ -68,11 +81,11 @@ target set that included the Pokemon’s legendary status. Type attributes
 (categorical variables) for the Pokemon were split into columns
 containing dummy variables due to the shortcomings of the `sklearn`
 implementation of decision trees. The `DecisionTreeClassifier` was then
-used to generate our model. We optimized our hyper parameter (depth) by
-conducting cross validation. After selecting the most optimal depth, we
-refitted the entire dataset. The object attribute `feature_importances_`
-returned an array of the gini score reduction of each feature. The
-features with the highest values answer our question.
+used to generate our model. We optimized our hyper parameter (depth)
+using cross validation. After selecting the optimal depth, we refit the
+entire dataset. The object attribute `feature_importances_` returned an
+array of the gini score reduction of each feature. The features with the
+highest values answer our question.
 
 #### Results
 
