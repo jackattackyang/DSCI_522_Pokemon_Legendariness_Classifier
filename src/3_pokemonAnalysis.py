@@ -69,6 +69,7 @@ def main():
     importance_df = pd.DataFrame({"Feature": features.columns.values, "Importance": feature_importances})
     importance_df = importance_df.query("Importance > 0.01")
     importance_df = importance_df.sort_values(by="Importance", ascending=False)
+    importance_df = importance_df.round(2)
 
     importance_df.to_csv(pokemon_data_output_file_path + ".csv")
 
