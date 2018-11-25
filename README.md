@@ -76,3 +76,13 @@ Figure 4: Top Predictors for Legendaries
 With our current knowledge level, between decision trees and KNN (k nearest neighbors), we were more comfortable with classifying categorical and numerical variables using decision trees. However, we cannot say whether decision trees is better than KNN. These two may also not be the best method for our question. Our views may change in a few weeks from now with more techniques learned in Supervised Learning. An interesting insight that we did not make use of in our analysis is the fact that many legendary Pokemon are classified as "Genderless". This feature seems like a good indicator and warrants some exploration with more time given to this study. Another limitation with this analysis is the "pseudo-legendary", a Pokemon with high stats that is not considered legendary. So in this case, our classifier would wrongly classify a normal Pokemon as a legendary.
 
 With more time available, we would also like to test likely mis-classifications, add a "Gender" feature and attempt to improve our model by by identifying better features.
+
+#### References
+
+###### 1: Pokemon Dataset
+
+<https://www.kaggle.com/abcsds/pokemon>
+
+###### 2: Pokemon Colour Templates
+
+<https://bulbapedia.bulbagarden.net/wiki/Category:Type_color_templates>
