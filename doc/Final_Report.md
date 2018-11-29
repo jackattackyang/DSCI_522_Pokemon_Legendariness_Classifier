@@ -2,7 +2,7 @@ Pokemon Legendariness Classifier
 ================
 Rayce Rossum, Jack Yang
 
-<img src="https://github.com/UBC-MDS/DSCI_522_Pokemon_Legendariness_Classifier/blob/master/imgs/Pokemon_logo.svg" width="80%" />
+<img src="../imgs/Pokemon_logo.svg" width="80%" />
 
 ## Introduction
 
