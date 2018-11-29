@@ -11,7 +11,7 @@ library(tidyverse)
 
 ```{r intro logo}
 # Logo taken from https://commons.wikimedia.org/wiki/File:International_Pok%C3%A9mon_logo.svg and is part of the public domain
-knitr::include_graphics(here::here("imgs", "Pokemon_logo.svg"))
+knitr::include_graphics("../imgs/Pokemon_logo.svg")
 ```
 
 ## Introduction
@@ -35,7 +35,7 @@ The following barplot explores the dataset and gives us some intuition of what p
 
 ```{r eda bar1}
 
-knitr::include_graphics(here::here("results", "EDA_pokemonCount.png"))
+knitr::include_graphics("../results/EDA_pokemonCount.png")
 
 ```
 
@@ -47,7 +47,7 @@ We are most curious in determining whether there is a relationship between Pokem
 
 ```{r eda box2}
 
-knitr::include_graphics(here::here("results", "EDA_pokemonFeatureComparison.png"))
+knitr::include_graphics("../results/EDA_pokemonFeatureComparison.png")
 
 ```
 
@@ -57,7 +57,7 @@ We can see that indeed, legendary Pokemon tend to have higher stats compared to 
 
 ```{r eda bar3}
 
-knitr::include_graphics(here::here("results", "EDA_pokemonTypeComparison.png"))
+knitr::include_graphics("../results/EDA_pokemonTypeComparison.png")
 
 ```
 
@@ -76,16 +76,16 @@ From our analysis, we found "Sp. Atk", "Attack", "Sp. Def" have the greatest imp
 important_features = read_csv(here::here("results", "DecisionTree_important_features.csv"))
 knitr::kable(important_features[,2:3])
 
-knitr::include_graphics(here::here("results", "DecisionTree_important_features_plot.png"))
+knitr::include_graphics("../results/DecisionTree_important_features_plot.png")
 
 ```
 
   Figure 4: Top Predictors for Legendaries
 
 #### Limitations and Time Considerations
-With our current knowledge level, between decision trees and KNN (k nearest neighbors), we were more comfortable with classifying categorical and numerical variables using decision trees. However, we cannot say whether decision trees is better than KNN. These two may also not be the best method for our question. Our views may change in a few weeks from now with more techniques learned in Supervised Learning. An interesting insight that we did not make use of in our analysis is the fact that many legendary Pokemon are classified as "Genderless". This feature seems like a good indicator and warrants some exploration with more time given to this study. Another limitation with this analysis is the "pseudo-legendary", a Pokemon with high stats that is not considered legendary. So in this case, our classifier would wrongly classify a normal Pokemon as a legendary.
-1
-With more time available, we would like to test likely mis-classifications, add a "Gender" feature and attempt to improve our model by by identifying better features.
+With our current knowledge level, between decision trees and KNN (k nearest neighbors), we were more comfortable with classifying categorical and numerical variables using decision trees. However, we cannot say whether decision trees is better than KNN. These two may also not be the best method for our question. Our views may change in a few weeks from now with more techniques learned in Supervised Learning. An interesting insight that we did not make use of in our analysis is the fact that many legendary Pokemon are classified as "Genderless". This feature seems like a good indicator and warrants some exploration with more time given to this study. Another limitation with this analysis is the "pseudo-legendary", a Pokemon with high stats that is not considered legendary. In this case, our classifier would wrongly classify a normal Pokemon as a legendary.
+
+With more time available, we would like to test likely mis-classifications, add a "Gender" feature and attempt to improve our model by identifying better features.
 
 #### References
 ###### 1: Pokemon Dataset
