@@ -8,7 +8,7 @@
 |Jack Yang| [jackattackyang](https://github.com/jackattackyang) |
 
 ## Report
-Report can be found [here](docs/Final_Report.md)
+Report can be found [here](docs/Final_Report.html)
 
 ## Usage
 
