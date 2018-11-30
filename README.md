@@ -7,10 +7,10 @@
 |Rayce Rossum|[RayceRossum](https://github.com/RayceRossum) |
 |Jack Yang| [jackattackyang](https://github.com/jackattackyang) |
 
-### Report
-Report can be found [here]("docs/Final_Report.md")
+## Report
+Report can be found [here](docs/Final_Report.md)
 
-### Usage
+## Usage
 
 1. Clone this Repo
 2. Run the following commands from the shell:
@@ -23,7 +23,7 @@ Rscript -e "rmarkdown::render('./doc/Final_Report.Rmd')"
 ```
 <br> alternatively run `run_all.sh` or `Makefile`
 
-### Dependencies
+## Dependencies
 
 - R libraries
   - rmarkdown

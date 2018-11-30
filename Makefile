@@ -1,4 +1,4 @@
-all: doc/Final_Report.md
+all: docs/Final_Report.md
 
 # cleans oringal csv
 data/Pokemon_clean.csv: data/Pokemon.csv src/1_pokemonData.py
@@ -17,8 +17,8 @@ results/DecisionTree_important_features_plot.png: results/DecisionTree_important
 	Rscript src/4_predictorsPlot.R ./results/DecisionTree_important_features.csv ./results
 
 # generates final report
-doc/Final_Report.md: doc/Final_Report.Rmd results/DecisionTree_important_features_plot.png results/EDA_pokemonCount.png results/EDA_pokemonFeatureComparison.png results/EDA_pokemonTypeComparison.png results/cross_val_plot.png
-	Rscript -e "rmarkdown::render('./doc/Final_Report.Rmd')"
+docs/Final_Report.md: docs/Final_Report.Rmd results/DecisionTree_important_features_plot.png results/EDA_pokemonCount.png results/EDA_pokemonFeatureComparison.png results/EDA_pokemonTypeComparison.png results/cross_val_plot.png
+	Rscript -e "rmarkdown::render('./docs/Final_Report.Rmd')"
 
 clean:
 	# cleans csv file
@@ -37,5 +37,5 @@ clean:
 	rm -f results/DecisionTree_important_features_plot.png
 
 	# cleans the md and html versions of the final report
-	rm -f doc/Final_Report.md
-	rm -f doc/Final_Report.html
+	rm -f docs/Final_Report.md
+	rm -f docs/Final_Report.html

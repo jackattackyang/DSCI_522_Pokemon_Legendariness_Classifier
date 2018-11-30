@@ -34,4 +34,7 @@ pokemon_table
        y = "Predictor %") +
   theme(legend.position = "none"))
 
-ggsave("DecisionTree_important_features_plot.png", predictors_plot, path = output_file)
+ggsave("DecisionTree_important_features_plot.png", predictors_plot, path = output_file, width = 5, height =5)
+
+# does not generate Rplot
+
