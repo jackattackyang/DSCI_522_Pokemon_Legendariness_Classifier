@@ -5,13 +5,12 @@ output: github_document
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(out.width = "80%", echo = FALSE)
-library(here)
 library(tidyverse)
 ```
 
 ```{r intro logo}
 # Logo taken from https://commons.wikimedia.org/wiki/File:International_Pok%C3%A9mon_logo.svg and is part of the public domain
-knitr::include_graphics(here::here("imgs", "Pokemon_logo.svg"))
+knitr::include_graphics("../imgs/Pokemon_logo.svg")
 ```
 
 ## Introduction
@@ -35,7 +34,7 @@ The following barplot explores the dataset and gives us some intuition of what p
 
 ```{r eda bar1}
 
-knitr::include_graphics(here::here("results", "EDA_pokemonCount.png"))
+knitr::include_graphics("../results/EDA_pokemonCount.png")
 
 ```
 
@@ -57,7 +56,7 @@ We can see that indeed, legendary Pokemon tend to have higher stats compared to 
 
 ```{r eda bar3}
 
-knitr::include_graphics(here::here("results", "EDA_pokemonTypeComparison.png"))
+knitr::include_graphics("../results/EDA_pokemonTypeComparison.png")
 
 ```
 
