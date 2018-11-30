@@ -39,7 +39,7 @@ As we can see, less than 10 percent of Pokemon are legendary. This is actually a
 
 We are most curious in determining whether there is a relationship between Pokemon attributes and the legendary status.
 
-<img src="C:/Users/Jack/Documents/Data_Science/DSCI522_workflows/DSCI_522_Pokemon_Legendariness_Classifier/results/EDA_pokemonFeatureComparison.png" width="80%" />
+<img src="../results/EDA_pokemonFeatureComparison.png" width="80%" />
 
 Figure 2: Pokemon Feature Comparison
 
@@ -61,7 +61,7 @@ Table 1: Optimal Cross Validation Score
 |:-----:|:----------:|
 |   8   |    92.5%   |
 
-<img src="C:/Users/Jack/Documents/Data_Science/DSCI522_workflows/DSCI_522_Pokemon_Legendariness_Classifier/results/cross_val_plot.png" width="80%" />
+<img src="../results/cross_val_plot.png" width="80%" />
 
 Figure 4: Cross Validation Plot
 
@@ -85,7 +85,7 @@ Table 2: Feature Importances
 | Type 1\_Rock |        0.02|
 | HP           |        0.02|
 
-<img src="C:/Users/Jack/Documents/Data_Science/DSCI522_workflows/DSCI_522_Pokemon_Legendariness_Classifier/results/DecisionTree_important_features_plot.png" width="80%" />
+<img src="../results/DecisionTree_important_features_plot.png" width="80%" />
 
 Figure 5: Top Predictors for Legendaries
 

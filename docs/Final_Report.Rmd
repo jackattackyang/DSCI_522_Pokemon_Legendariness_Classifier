@@ -46,7 +46,7 @@ We are most curious in determining whether there is a relationship between Pokem
 
 ```{r eda box2}
 
-knitr::include_graphics(here::here("results", "EDA_pokemonFeatureComparison.png"))
+knitr::include_graphics("../results/EDA_pokemonFeatureComparison.png")
 
 ```
 
@@ -75,7 +75,7 @@ Table 1: Optimal Cross Validation Score
 
 ```{r analysis plot}
 
-knitr::include_graphics(here::here("results", "cross_val_plot.png"))
+knitr::include_graphics("../results/cross_val_plot.png")
 
 ```
 
@@ -90,10 +90,10 @@ By listening to the issues brought up by our peers, we balanced out our dataset 
 
   Table 2: Feature Importances
 ```{r ECHO=FALSE, warning=FALSE, message=FALSE}
-important_features = read_csv(here::here("results", "DecisionTree_important_features.csv"))
+important_features = read_csv("../results/DecisionTree_important_features.csv")
 knitr::kable(important_features[,2:3])
 
-knitr::include_graphics(here::here("results", "DecisionTree_important_features_plot.png"))
+knitr::include_graphics("../results/DecisionTree_important_features_plot.png")
 
 ```
 
