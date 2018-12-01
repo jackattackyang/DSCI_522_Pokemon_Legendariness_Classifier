@@ -26,6 +26,7 @@ def main():
     pokemon_data_file_path, pokemon_data_output_file_path = get_args()
 
     # Load data
+    #pokemon_data = pd.read_csv("../data/Pokemon_clean.csv")
     pokemon_data = pd.read_csv(pokemon_data_file_path)
     pokemon_data = pd.get_dummies(pokemon_data, columns=["Type 1", "Type 2"])
 
@@ -41,7 +42,7 @@ def main():
     scores_test = []
 
     for depth in range(1, 10):
-        tree = DecisionTreeClassifier(max_depth = depth, random_state=rstate)
+        tree = DecisionTreeClassifier(max_depth = depth, random_state=rstate, class_weight = "balanced")
         #tree = KNeighborsClassifier(n_neighbors = depth)
         tree.fit(features, target)
 
@@ -49,20 +50,24 @@ def main():
         #scores_train.append(np.mean(cross_val_score(tree, X_train, y_train, cv=10)))
         scores_test.append(np.mean(cross_val_score(tree, features, target, cv=10)))
 
-    depth_score_test_df = pd.DataFrame(scores_test, index=depths, columns=['score'])
+    plt.rcParams["figure.figsize"] = (10, 4)
+    plt.rcParams["xtick.labelsize"] = 12
+    depth_score_test_df = pd.DataFrame({'depth': depths, 'score': scores_test}, index = depths)
+    cross_val_plot = depth_score_test_df.plot(x = "depth", y = "score", label = "Cross Validation Score").get_figure()
+    cross_val_plot.savefig(pokemon_data_output_file_path + "/cross_val_plot.png")
 
     print(depth_score_test_df)
 
     # Read depth of highest score
-    depth_of_max_test = depth_score_test_df.loc[depth_score_test_df['score'].idxmax()].name
+    depth_of_max_test = depth_score_test_df.loc[depth_score_test_df['score'].idxmax()].depth
 
-    #print(depth_of_max_test)
+    print(depth_of_max_test)
     #print(depth_score_test_df.iloc[[depth_of_max_test]])
 
     # Fit with best hyper parameters
-    bestTree = DecisionTreeClassifier(max_depth = depth_of_max_test, random_state=42)
+    bestTree = DecisionTreeClassifier(max_depth = depth_of_max_test, random_state=42, class_weight="balanced")
     bestTree.fit(features, target)
-    print("Testing score:\n", depth_score_test_df.iloc[[depth_of_max_test]])
+    print("Testing score:\n", depth_score_test_df.iloc[[depth_of_max_test-1]])
 
     # Calculate most important features
     feature_importances = bestTree.feature_importances_
@@ -71,14 +76,14 @@ def main():
     importance_df = importance_df.sort_values(by="Importance", ascending=False)
     importance_df = importance_df.round(2)
 
-    importance_df.to_csv(pokemon_data_output_file_path + ".csv")
+    importance_df.to_csv(pokemon_data_output_file_path + "/DecisionTree_important_features.csv")
 
     # Save importance bar graph
-    plt.rcParams["figure.figsize"] = (15, 4)
+    plt.rcParams["figure.figsize"] = (10, 4)
     plt.rcParams["xtick.labelsize"] = 10
     importance_plot = sns.barplot(data=importance_df, x="Feature", y="Importance")
     importance_plot_fig = importance_plot.get_figure()
-    importance_plot_fig.savefig(pokemon_data_output_file_path + "_plot.png")
+    importance_plot_fig.savefig(pokemon_data_output_file_path + "/DecisionTree_important_features_plot.png")
 
 
 if __name__ == "__main__":
