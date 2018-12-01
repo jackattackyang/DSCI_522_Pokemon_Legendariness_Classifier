@@ -1,3 +1,11 @@
+# Rayce Rossum, Dec 1, 2018
+#
+# This script performs analysis on a given csv and outputs results to a given folder
+#
+# Requires sklearn and pandas installation
+#
+# Usage: python src/3_pokemonAnalysis.py "./data/Pokemon_clean.csv" "./results"
+
 import numpy as np
 import pandas as pd
 import seaborn as sns

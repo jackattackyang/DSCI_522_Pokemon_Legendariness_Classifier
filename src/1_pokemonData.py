@@ -1,3 +1,11 @@
+# Rayce Rossum, Dec 1, 2018
+#
+# This script loads in a given csv, cleans the type and generation columns from it, and # outputs the results to a given file path
+#
+# Requires pandas installation
+#
+# Usage: python src/1_pokemonData.py "./data/Pokemon.csv" "./data/Pokemon_clean.csv"
+
 import argparse
 
 import numpy as np
