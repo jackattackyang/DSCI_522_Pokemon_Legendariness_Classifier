@@ -16,13 +16,13 @@ Report can be found [here](docs/Final_Report.md)
 
 2. ```docker pull raycer/dsci_522_pokemon_legendariness_classifier``` to retrieve the image
 
-3. a. Run the following commands from the shell to generate outputs:
+3.  a. Run the following commands from the shell to generate outputs:
 ```
 # docker run --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_legendariness_classifier make -C "/project-dir/" all
 ```
-b. Alternatively
+  b. Alternatively
 
-```# docker run -it --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_classifier /bin/bash```<br/>
+  ```# docker run -it --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_classifier /bin/bash```<br/>
 ```# cd project-dir```<br/>
 ```# make all```
 
