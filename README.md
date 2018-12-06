@@ -23,8 +23,8 @@ Report can be found [here](docs/Final_Report.md)
   b. Alternatively
 
   ```# docker run -it --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_classifier /bin/bash```<br/>
-```# cd project-dir```<br/>
-```# make all```
+  ```# cd project-dir```<br/>
+  ```# make all```
 
 4. Alternatively run `run_all.sh` or individually:
 
