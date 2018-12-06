@@ -21,13 +21,13 @@ Report can be found [here](docs/Final_Report.md)
 # docker run --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_legendariness_classifier make -C "/project-dir/" all
 ```
 b. Alternatively
-<br>
-```# docker run -it --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_classifier /bin/bash```<br>
-```# cd project-dir```<br>
+
+```# docker run -it --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_classifier /bin/bash```<br/>
+```# cd project-dir```<br/>
 ```# make all```
 
 4. Alternatively run `run_all.sh` or individually:
-<br>
+<br/>
 ```
 python src/1_pokemonData.py "./data/Pokemon.csv" "./data/Pokemon_clean.csv"
 Rscript src/2_pokemonEDA.R ./data/Pokemon_clean.csv ./results
