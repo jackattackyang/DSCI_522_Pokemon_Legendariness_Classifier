@@ -13,7 +13,21 @@ Report can be found [here](docs/Final_Report.md)
 ## Usage
 
 1. Clone this Repo
-2. Run the following commands from the shell:
+
+2. ```docker pull dsci_522_pokemon_legendariness_classifier``` to retrieve the image
+3.
+a. Run the following commands from the shell to generate outputs:
+```
+# docker run --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_legendariness_classifier make -C "/project-dir/" all
+```
+b. Alternatively
+<br>
+```# docker run -it --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_classifier /bin/bash```<br>
+```# cd project-dir```<br>
+```# make all```
+
+4. Alternatively run `run_all.sh` or individually:
+<br>
 ```
 python src/1_pokemonData.py "./data/Pokemon.csv" "./data/Pokemon_clean.csv"
 Rscript src/2_pokemonEDA.R ./data/Pokemon_clean.csv ./results
@@ -21,7 +35,11 @@ python src/3_pokemonAnalysis.py "./data/Pokemon_clean.csv" "./results"
 Rscript src/4_predictorsPlot.R ./results/DecisionTree_important_features.csv ./results
 Rscript -e "rmarkdown::render('./doc/Final_Report.Rmd')"
 ```
-<br> alternatively run `run_all.sh` or `Makefile`
+5. To clean analysis:
+```
+docker run --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_legendariness_classifier make -C "/project-dir/" clean
+```
+
 
 ## Dependencies
 
