@@ -1,6 +1,12 @@
 # Docker file for Pokemon Legendariness Classifier
 # Jack Yang, Rayce Rossum
 # Dec, 6 2018
+#
+# USAGE:
+# sudo docker run -it --rm -v "/path/to/project":"/project-dir/" pokemon-classifier /bin/bash
+#
+# cd project-dir
+# make all
 
 # Get base R and tidyverse from rocker
 FROM rocker/tidyverse
@@ -23,9 +29,3 @@ RUN pip3 install sklearn
 RUN apt-get update && \
     pip3 install matplotlib && \
     rm -rf /var/lib/apt/lists/*
-
-WORKDIR /src
-
-COPY . /src
-
-CMD ["make", "all"]
