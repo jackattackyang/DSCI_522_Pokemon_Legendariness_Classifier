@@ -12,11 +12,11 @@ Report can be found [here](docs/Final_Report.md)
 
 ## Usage
 
-1. Clone this Repo
+1. Clone the [Repo](https://github.com/UBC-MDS/DSCI_522_Pokemon_Legendariness_Classifier)
 
-2. ```docker pull dsci_522_pokemon_legendariness_classifier``` to retrieve the image
-3.
-a. Run the following commands from the shell to generate outputs:
+2. ```docker pull raycer/dsci_522_pokemon_legendariness_classifier``` to retrieve the image
+
+3. a. Run the following commands from the shell to generate outputs:
 ```
 # docker run --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_legendariness_classifier make -C "/project-dir/" all
 ```
