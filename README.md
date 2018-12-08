@@ -16,6 +16,7 @@ The goal of this project is to determine the features that are most predictive o
 
 This dataset ["Pokemon with Stats"](https://www.kaggle.com/abcsds/pokemon/home) was found on Kaggle, released under CC0: Public Domain. The dataset contains Names of the Pokemon, type, various statistics such as attack, defense points... etc. as well as the legendary status (yes or no) of each Pokemon.
 
+
 ## Analysis
 
 We used the decision tree classifier in Python's sklearn. We split our data into a features set that included stats and type of Pokemon, and a target set that included the Pokemon's legendary status. The DecisionTreeClassifier with a balanced weighting between the Legendaries and non-Legendaries was then used to generate our model. The object attribute `feature_importances_` returned an array of the features with the highest values which answered our question.
@@ -29,6 +30,7 @@ As we can see, (unsurprisingly) Special Moves tend to be very strong predictors 
 Full report can be found [here](docs/Final_Report.md)
 
 ## Usage with Docker
+
 
 1. Clone this [Repo](https://github.com/UBC-MDS/DSCI_522_Pokemon_Legendariness_Classifier). Dockerhub link can be found [here](https://hub.docker.com/r/raycer/dsci_522_pokemon_legendariness_classifier/)
 
