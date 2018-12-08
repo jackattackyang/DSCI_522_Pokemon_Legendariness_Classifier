@@ -30,7 +30,7 @@ Full report can be found [here](docs/Final_Report.md)
 
 ## Usage with Docker
 
-1. Clone the [Repo](https://github.com/UBC-MDS/DSCI_522_Pokemon_Legendariness_Classifier)
+1. Clone this [Repo](https://github.com/UBC-MDS/DSCI_522_Pokemon_Legendariness_Classifier). Dockerhub link can be found [here](https://hub.docker.com/r/raycer/dsci_522_pokemon_legendariness_classifier/)
 
 2. ```docker pull raycer/dsci_522_pokemon_legendariness_classifier``` to retrieve the image
 
@@ -68,17 +68,17 @@ docker run --rm -v "/path/to/project":"/project-dir/" dsci_522_pokemon_legendari
 
 ## Dependencies
 
-- R libraries
-  - rmarkdown
-  - knitr
-  - tidyverse
-  - maps
-  - here
+- R version 3.5.1
+  - rmarkdown 1.10
+  - knitr 1.20
+  - tidyverse 1.2.1
+  - maps 3.3.0
+  - here 0.1
 
-- Python libraries
-  - matplotlib
-  - numpy
-  - seaborn
-  - pandas
-  - argparse
-  - sklearn
+- Python 3.6.5
+  - matplotlib 2.2.2
+  - numpy 1.14.3
+  - seaborn 0.9.0
+  - pandas 0.23.4
+  - argparse 1.4.0
+  - scikit-learn 0.19.1
