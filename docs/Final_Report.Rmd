@@ -4,7 +4,7 @@ author: "Rayce Rossum, Jack Yang"
 output: github_document
 ---
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(out.width = "80%", echo = FALSE)
+knitr::opts_chunk$set(out.width = "70%", echo = FALSE)
 library(tidyverse)
 ```
 
@@ -32,7 +32,7 @@ We dropped "Generation" and "Total" from our set of features. "Total" was droppe
 
 The following barplot explores the dataset and gives us some intuition of what proportion of Pokemon is actually legendary.
 
-```{r eda bar1}
+```{r eda box1, out.width = "65%"}
 
 knitr::include_graphics("../results/EDA_pokemonCount.png")
 
@@ -54,7 +54,7 @@ Figure 2: Pokemon Feature Comparison
 
 We can see that indeed, legendary Pokemon tend to have higher stats compared to regular Pokemon. Lastly, we wanted to see whether there is any favoritism for legendary Pokemon across different types.
 
-```{r eda bar3}
+```{r eda bar3, out.width = "60%"}
 
 knitr::include_graphics("../results/EDA_pokemonTypeComparison.png")
 
