@@ -14,7 +14,7 @@ The goal of this project is to determine the features that are most predictive o
 
 ## Dataset
 
-This dataset ["Pokemone with Stats"](https://www.kaggle.com/abcsds/pokemon/home) was found on Kaggle, released under CC0: Public Domain. The dataset contains Names of the Pokemon, type, various statistics such as attack, defense points... etc. as well as the legendary status (yes or no) of each Pokemon.
+This dataset ["Pokemon with Stats"](https://www.kaggle.com/abcsds/pokemon/home) was found on Kaggle, released under CC0: Public Domain. The dataset contains Names of the Pokemon, type, various statistics such as attack, defense points... etc. as well as the legendary status (yes or no) of each Pokemon.
 
 ## Analysis
 
